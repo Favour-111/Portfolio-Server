@@ -1,0 +1,13 @@
+node_modules/
+.env
+*.log
+.DS_Store
+
+# Uploaded files — keep the folders (via .gitkeep) but not user content
+storage/*
+!storage/images/
+!storage/documents/
+storage/images/*
+storage/documents/*
+!storage/images/.gitkeep
+!storage/documents/.gitkeep
