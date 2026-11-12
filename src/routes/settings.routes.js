@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get("/", getSettings);
 router.put("/", protect, updateSettings);
-router.post("/upload", protect, upload.single("image"), uploadSettingsImage);
+router.post("/upload", protect, upload.single("image"),uploadSettingsImage);
 router.post("/resume", protect, uploadDoc.single("cv"), uploadResume);
 
 export default router;

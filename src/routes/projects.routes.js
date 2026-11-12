@@ -24,7 +24,7 @@ router.put("/:id", protect, updateProject);
 router.delete("/:id", protect, deleteProject);
 
 router.post("/:id/thumbnail", protect, upload.single("image"), uploadThumbnail);
-router.post("/:id/images", protect, upload.array("images", 20), uploadProjectImages);
+router.post("/:id/images", protect, upload.array("images", 20),uploadProjectImages);
 router.delete("/:id/images/:imageId", protect, deleteProjectImage);
 
 export default router;

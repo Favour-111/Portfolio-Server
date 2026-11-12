@@ -13,8 +13,8 @@ const router = express.Router();
 
 router.get("/", optionalAuth, getExperience);
 router.patch("/reorder", protect, reorderExperience);
-router.post("/", protect, upload.single("logo"), createExperience);
-router.put("/:id", protect, upload.single("logo"), updateExperience);
+router.post("/", protect, upload.single("logo"),createExperience);
+router.put("/:id", protect, upload.single("logo"),updateExperience);
 router.delete("/:id", protect, deleteExperience);
 
 export default router;

@@ -12,7 +12,7 @@ router.get("/dashboard", getDashboard);
 router.get("/search", globalSearch);
 
 router.put("/profile", updateProfile);
-router.post("/profile/avatar", upload.single("image"), uploadAvatar);
+router.post("/profile/avatar", upload.single("image"),uploadAvatar);
 router.post("/profile/cv", uploadDoc.single("cv"), uploadCV);
 
 export default router;

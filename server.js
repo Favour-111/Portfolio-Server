@@ -20,6 +20,7 @@ import messageRoutes from "./src/routes/messages.routes.js";
 import mediaRoutes from "./src/routes/media.routes.js";
 import settingsRoutes from "./src/routes/settings.routes.js";
 import adminRoutes from "./src/routes/admin.routes.js";
+import aiRoutes from "./src/routes/ai.routes.js";
 
 await connectDB();
 
@@ -49,7 +50,7 @@ app.use(
 
 // Uploaded images/documents live on disk under backend/storage and are
 // served directly — e.g. /storage/images/169..-abc.webp
-app.use("/storage", express.static(STORAGE_ROOT));
+app.use("/storage", express.static(STORAGE_ROOT, { maxAge: "30d", immutable: true }));
 
 app.get("/api/health", (req, res) => res.json({ success: true, message: "API is running." }));
 
@@ -64,6 +65,7 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/media", mediaRoutes);
 app.use("/api/settings", settingsRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/ai", aiRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

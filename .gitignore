@@ -11,3 +11,6 @@ storage/images/*
 storage/documents/*
 !storage/images/.gitkeep
 !storage/documents/.gitkeep
+
+# Migration reports/backups (contain database contents)
+migration-reports/
